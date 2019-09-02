@@ -3,6 +3,7 @@ package com.example.borrar22
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.widget.Button
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -22,5 +23,10 @@ class MainActivity : AppCompatActivity() {
         val resultado=numeroA+numeroB
         textViewResultado.text=resultado.toString()
 
+    }
+
+    fun writeNum(v: View){
+        val botonPulsado=findViewById<Button>(v.id)
+        editTextNumeroA.setText(editTextNumeroA.text.toString()+botonPulsado.text)
     }
 }
