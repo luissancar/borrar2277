@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
 import android.widget.Button
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_main.*
 
 class MainActivity : AppCompatActivity() {
@@ -17,7 +18,12 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
     }
     fun sumar(v: View){
+        if (editTextNumeroA.text.length<=0 || editTextNumeroB.text.length<=0)
+        {
+            Toast.makeText(this, "Error, introducir números", Toast.LENGTH_SHORT).show()
+            return
 
+        }
         numeroA=editTextNumeroA.text.toString().toInt()
         numeroB=editTextNumeroB.text.toString().toInt()
         val resultado=numeroA+numeroB
